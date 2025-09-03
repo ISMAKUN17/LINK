@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo en Uno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color-light: #f0f4f8;
+            --card-bg-light: #ffffff;
+            --card-border-light: #e0e6ed;
+            --text-color-dark: #2d3748;
+            --accent-color-1: #4299e1;
+            --accent-color-2: #3182ce;
+            --shadow-color-light: rgba(45, 55, 72, 0.15);
+            --shadow-color-hover: rgba(49, 130, 206, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color-light);
+            background: linear-gradient(135deg, #e6eaf0, #f0f4f8, #e6eaf0);
+            background-size: 200% 200%;
+            animation: gradient-animation 15s ease infinite;
+            color: var(--text-color-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        /* Animación para el fondo degradado */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2.5em, 5vw, 4em);
+            font-weight: 700;
+            color: var(--text-color-dark);
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg-light);
+            border: 1px solid var(--card-border-light);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px var(--shadow-color-light);
+            text-decoration: none;
+            color: var(--text-color-dark);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animación al pasar el cursor */
+        .card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px var(--shadow-color-hover);
+            background: linear-gradient(135deg, var(--accent-color-1) 0%, var(--accent-color-2) 100%);
+            color: #ffffff;
+        }
+
+        /* Animación para el contenido del botón */
+        .card-content {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover .card-content {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 1.7em;
+            font-weight: 600;
+            transition: color 0.4s ease;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 1.1em;
+            transition: color 0.4s ease;
+        }
+        
+        /* Ajustes de color de texto en hover */
+        .card:hover h2, .card:hover p {
+            color: #ffffff;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ATAJOS PARA LAS APPS</h1>
+        <div class="card-grid">
+            <!-- Botón para Google -->
+            <a href="https://ismakun17.github.io/Survey/view" target="_blank" class="card">
+                <div class="card-content">
+                    <h2>Interacciones</h2>
+                    <p>Aqui podras encontrar las interacciones realizadas.</p>
+                </div>
+            </a>
+            <!-- Botón para Wikipedia -->
+            <a href="https://ismakun17.github.io/CHECKOUT/results.html" target="_blank" class="card">
+                <div class="card-content">
+                    <h2>Checkout</h2>
+                    <p>Aqui veras el resultado del checkout survey.</p>
+                </div>
+            </a>
+            <!-- Botón para YouTube -->
+            <a href="https://ismakun17.github.io/lazyriver/admin.html" target="_blank" class="card">
+                <div class="card-content">
+                    <h2>Lazy River</h2>
+                    <p>Ocupaciones de las cabanas.</p>
+                </div>
+            </a>
+            <!-- Botón para GitHub -->
+            <a href="https://ismakun17.github.io/CENAS/" target="_blank" class="card">
+                <div class="card-content">
+                    <h2>Cenas</h2>
+                    <p>Reserva tus Cenas.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
